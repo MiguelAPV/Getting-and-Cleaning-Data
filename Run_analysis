@@ -9,7 +9,7 @@ library(dplyr)
 
 
 ############################
-#  Step 1 - Getting the data
+#  Step 0 - Getting the data
 ############################
 
 # download zip file containing data 
@@ -29,7 +29,7 @@ if (!file.exists(dataPath)) {
 
 
 ############################
-# Step 2 - Reading the data
+# Step 0.1 - Reading the data
 ############################
 
 # read training data
@@ -70,7 +70,7 @@ colnames(humanActivity) <- c("subject", features[, 2], "activity")
 
 
 ###########################################################################
-# Step 3 - Extract only the measurements on the mean and standard deviation
+# Step 2 - Extract only the measurements on the mean and standard deviation
 #          for each measurement
 ###########################################################################
 
@@ -82,7 +82,7 @@ humanActivity <- humanActivity[, columnsToKeep]
 
 
 ################################################################
-# Step 4 - Use descriptive activity names to name the activities 
+# Step 3 - Use descriptive activity names to name the activities 
 ################################################################
 
 # replace activity values with named factor levels
@@ -91,7 +91,7 @@ humanActivity$activity <- factor(humanActivity$activity,
 
 
 ###########################################################################
-# Step 5 - Appropriately label the data set with descriptive variable names
+# Step 4 - Appropriately label the data set with descriptive variable names
 ###########################################################################
 
 # get column names and removing special characters
